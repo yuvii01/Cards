@@ -12,10 +12,11 @@
 <!-- A pen by Developer Rahul -->
 
 <!-- Add the audio element here -->
-<audio id="background-audio" autoplay loop>
+<audio id="background-audio" autoplay loop muted>
   <source src="tum.mp3" type="audio/mpeg">
   Your browser does not support the audio element.
 </audio>
+
 
 <div class="paper heart"></div>
 
@@ -32,7 +33,7 @@
 
 <div class="paper image">
   <p>How can be </p>
-  <p> someone so cute ❤️ </p>
+  <p> someone be so cute ❤️ </p>
   <img src="images/1.jpeg" />
 </div>
 
@@ -43,7 +44,7 @@
 
 <div class="paper">
   <p class="p1">You are Cute </p>
-  <p class="p1">Amazing <span style="color: red !important;">❤️</span></p>
+  <p class="p1"> and Amazing <span style="color: red !important;">❤️</span></p>
 </div>
 
 <div class="paper">
@@ -54,10 +55,12 @@
 <script>
   const audio = document.getElementById('background-audio');
 
-  // Attempt to autoplay the audio
-  audio.play().catch(error => {
-    console.warn("Autoplay was blocked. User interaction is required to play the audio.", error);
-  });
+// Unmute the audio and attempt to play
+audio.muted = false;
+audio.play().catch(error => {
+  console.warn("Autoplay was blocked. User interaction is required to play the audio.", error);
+});
+
 </script>
 <script src="./mobile.js"></script>
 </body>
