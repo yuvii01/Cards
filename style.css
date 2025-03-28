@@ -27,31 +27,25 @@ body {
 }
 
 
-.paper img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
 .paper.heart {
-  background: red;
-  width: 150px;
-  height: 150px;
+  position: relative;
+  width: 200px;
+  height: 200px;
+  padding: 0;
   border-radius: 50%;
 }
 
-.paper.red {
-  background: pink;
-  color: #000;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+.paper.image {
+  padding: 10px;
+}
+.paper.image p {
+  font-size: 30px;
 }
 
-.p1, .p2 {
-  margin: 0;
-  padding: 5px;
+img {
+  max-height: 200px;
+  width: 100%;
+  user-select: none;
 }
 
 .paper.heart::after {
