@@ -20,7 +20,8 @@ body {
   background-position: center center;
   padding: 20px 100px;
 /*  min-width: 800px; */
-  
+cursor: grab;
+touch-action: none ;
   transform: rotateZ(-5deg);
   box-shadow: 1px 15px 20px 0px rgba(0,0,0,0.5);
   

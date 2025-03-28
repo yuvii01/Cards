@@ -1,13 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CodePen - Drag Papers ❤️</title>
-  <link rel='stylesheet' href='https://fonts.googleapis.com/css2?family=Short+Stack&amp;family=Homemade+Apple&amp;display=swap'><link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Short+Stack&family=Homemade+Apple&display=swap">
+  <link rel="stylesheet" href="./style.css">
 </head>
 <body>
 <!-- partial:index.partial.html -->
-<!-- A pen by Developer Rahul  -->
+<!-- A pen by Developer Rahul -->
 
 <!-- Add the audio element here -->
 <audio id="background-audio" autoplay loop>
@@ -15,14 +17,12 @@
   Your browser does not support the audio element.
 </audio>
 
-<div class="paper heart">
-
-</div>
+<div class="paper heart"></div>
 
 <div class="paper image">
   <p> Very happy to have you</p>
-    <p> Aabha 😍 </p>
-   <img src="images/3.jpeg" />
+  <p> Aabha 😍 </p>
+  <img src="images/3.jpeg" />
 </div>
 
 <div class="paper image">
@@ -32,34 +32,33 @@
 
 <div class="paper image">
   <p>How can be </p>
-   <p> someone so cute ❤️ </p>
-
+  <p> someone so cute ❤️ </p>
   <img src="images/1.jpeg" />
 </div>
 
 <div class="paper red">
-<p class="p1"> and My Favorite</p>
-<p class="p2">Teddy Bear 🧸</p>
+  <p class="p1"> and My Favorite</p>
+  <p class="p2">Teddy Bear 🧸</p>
 </div>
 
 <div class="paper">
-<p class="p1">You are Cute </p>
-  <p class="p1">Amazing  <span style="color: red !important;">❤️</span></p>
+  <p class="p1">You are Cute </p>
+  <p class="p1">Amazing <span style="color: red !important;">❤️</span></p>
 </div>
 
 <div class="paper">
-<p class="p1">Drag the papers to move!</p>
+  <p class="p1">Drag the papers to move!</p>
 </div>
 
 <!-- partial -->
-  <script>
-    const audio = document.getElementById('background-audio');
+<script>
+  const audio = document.getElementById('background-audio');
 
-    // Attempt to autoplay the audio
-    audio.play().catch(error => {
-      console.warn("Autoplay was blocked. User interaction is required to play the audio.", error);
-    });
-  </script>
-  <script src="./script.js"></script>
+  // Attempt to autoplay the audio
+  audio.play().catch(error => {
+    console.warn("Autoplay was blocked. User interaction is required to play the audio.", error);
+  });
+</script>
+<script src="./mobile.js"></script>
 </body>
 </html>

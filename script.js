@@ -80,3 +80,57 @@ papers.forEach(paper => {
   const p = new Paper();
   p.init(paper);
 });
+
+
+document.querySelectorAll('.paper').forEach(paper => {
+  let isDragging = false;
+  let startX, startY, initialX, initialY;
+
+  // Mouse events
+  paper.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startX = e.clientX;
+    startY = e.clientY;
+    initialX = paper.offsetLeft;
+    initialY = paper.offsetTop;
+    e.preventDefault();
+  });
+
+  document.addEventListener('mousemove', (e) => {
+    if (isDragging) {
+      const dx = e.clientX - startX;
+      const dy = e.clientY - startY;
+      paper.style.left = `${initialX + dx}px`;
+      paper.style.top = `${initialY + dy}px`;
+    }
+  });
+
+  document.addEventListener('mouseup', () => {
+    isDragging = false;
+  });
+
+  // Touch events
+  paper.addEventListener('touchstart', (e) => {
+    isDragging = true;
+    const touch = e.touches[0];
+    startX = touch.clientX;
+    startY = touch.clientY;
+    initialX = paper.offsetLeft;
+    initialY = paper.offsetTop;
+    e.preventDefault();
+  });
+
+  document.addEventListener('touchmove', (e) => {
+    if (isDragging) {
+      const touch = e.touches[0];
+      const dx = touch.clientX - startX;
+      const dy = touch.clientY - startY;
+      paper.style.left = `${initialX + dx}px`;
+      paper.style.top = `${initialY + dy}px`;
+    }
+  });
+
+  document.addEventListener('touchend', () => {
+    isDragging = false;
+  });
+});
