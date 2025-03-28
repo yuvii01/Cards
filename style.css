@@ -15,38 +15,43 @@ body {
 }
 
 .paper {
-  background-image: url("https://i0.wp.com/textures.world/wp-content/uploads/2018/10/2-Millimeter-Paper-Background-copy.jpg?ssl=1");
-  background-size: 500px;
-  background-position: center center;
-  padding: 20px 100px;
-/*  min-width: 800px; */
-cursor: grab;
-touch-action: none ;
-  transform: rotateZ(-5deg);
-  box-shadow: 1px 15px 20px 0px rgba(0,0,0,0.5);
-  
   position: absolute;
+  width: 200px;
+  height: 200px;
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  cursor: grab;
+  touch-action: none; /* Prevent default touch behavior */
+  transition: transform 0.2s ease; /* Smooth dragging effect */
+}
+
+
+.paper img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
 .paper.heart {
-  position: relative;
-  width: 200px;
-  height: 200px;
-  padding: 0;
+  background: red;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
 }
 
-.paper.image {
-  padding: 10px;
-}
-.paper.image p {
-  font-size: 30px;
+.paper.red {
+  background: pink;
+  color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-img {
-  max-height: 200px;
-  width: 100%;
-  user-select: none;
+.p1, .p2 {
+  margin: 0;
+  padding: 5px;
 }
 
 .paper.heart::after {
