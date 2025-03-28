@@ -20,30 +20,29 @@ class Paper {
   init(paper) {
     paper.addEventListener('touchmove', (e) => {
       e.preventDefault();
-      if (!this.rotating) {
+      if(!this.rotating) {
         this.touchMoveX = e.touches[0].clientX;
         this.touchMoveY = e.touches[0].clientY;
-
-        // Slow down dragging by reducing velocity
-        this.velX = (this.touchMoveX - this.prevTouchX) * 0.5; // Slow down X
-        this.velY = (this.touchMoveY - this.prevTouchY) * 0.5; // Slow down Y
+        
+        this.velX = this.touchMoveX - this.prevTouchX;
+        this.velY = this.touchMoveY - this.prevTouchY;
       }
-
+        
       const dirX = e.touches[0].clientX - this.touchStartX;
       const dirY = e.touches[0].clientY - this.touchStartY;
-      const dirLength = Math.sqrt(dirX * dirX + dirY * dirY);
+      const dirLength = Math.sqrt(dirX*dirX+dirY*dirY);
       const dirNormalizedX = dirX / dirLength;
       const dirNormalizedY = dirY / dirLength;
 
       const angle = Math.atan2(dirNormalizedY, dirNormalizedX);
       let degrees = 180 * angle / Math.PI;
       degrees = (360 + Math.round(degrees)) % 360;
-      if (this.rotating) {
+      if(this.rotating) {
         this.rotation = degrees;
       }
 
-      if (this.holdingPaper) {
-        if (!this.rotating) {
+      if(this.holdingPaper) {
+        if(!this.rotating) {
           this.currentPaperX += this.velX;
           this.currentPaperY += this.velY;
         }
@@ -52,21 +51,20 @@ class Paper {
 
         paper.style.transform = `translateX(${this.currentPaperX}px) translateY(${this.currentPaperY}px) rotateZ(${this.rotation}deg)`;
       }
-    });
+    })
 
     paper.addEventListener('touchstart', (e) => {
-      if (this.holdingPaper) return;
+      if(this.holdingPaper) return; 
       this.holdingPaper = true;
-
+      
       paper.style.zIndex = highestZ;
       highestZ += 1;
-
+      
       this.touchStartX = e.touches[0].clientX;
       this.touchStartY = e.touches[0].clientY;
       this.prevTouchX = this.touchStartX;
       this.prevTouchY = this.touchStartY;
     });
-
     paper.addEventListener('touchend', () => {
       this.holdingPaper = false;
       this.rotating = false;
@@ -106,8 +104,8 @@ document.querySelectorAll('.paper').forEach(paper => {
 
   document.addEventListener('mousemove', (e) => {
     if (isDragging) {
-      const dx = (e.clientX - startX) * 0.5; // Slow down X
-      const dy = (e.clientY - startY) * 0.5; // Slow down Y
+      const dx = e.clientX - startX;
+      const dy = e.clientY - startY;
       paper.style.left = `${initialX + dx}px`;
       paper.style.top = `${initialY + dy}px`;
     }
@@ -131,8 +129,8 @@ document.querySelectorAll('.paper').forEach(paper => {
   document.addEventListener('touchmove', (e) => {
     if (isDragging) {
       const touch = e.touches[0];
-      const dx = (touch.clientX - startX) * 0.5; // Slow down X
-      const dy = (touch.clientY - startY) * 0.5; // Slow down Y
+      const dx = touch.clientX - startX;
+      const dy = touch.clientY - startY;
       paper.style.left = `${initialX + dx}px`;
       paper.style.top = `${initialY + dy}px`;
     }
@@ -142,9 +140,3 @@ document.querySelectorAll('.paper').forEach(paper => {
     isDragging = false;
   });
 });
-
-// Zoom out effect for mobile
-if (/Mobi|Android/i.test(navigator.userAgent)) {
-  document.body.style.transform = 'scale(0.9)';
-  document.body.style.transformOrigin = 'center';
-}
