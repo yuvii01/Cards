@@ -1,8 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
 
-
-
-
 body {
   height: 100vh;
   display: flex;
@@ -36,15 +33,29 @@ touch-action: none ;
   border-radius: 50%;
 }
 
+.paper.image.image2 {
+  max-width: 150%; /* Prevent it from being too wide */
+  margin: auto; /* Center the container */
+}
+
+.image2 img {
+  width: 100%; /* Make the image take the full width of its container */
+  max-width: 600px; /* Adjust maximum width to prevent excessive stretching */
+  display: block; /* Remove extra space below inline images */
+  margin: 0 auto; /* Center the image if smaller than max-width */
+}
+
+
 .paper.image {
   padding: 10px;
-}
+} 
+
 .paper.image p {
   font-size: 30px;
 }
 
 img {
-  max-height: 200px;
+  max-height: 250px;
   width: 100%;
   user-select: none;
 }
