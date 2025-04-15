@@ -18,33 +18,42 @@
 </audio>
 
 
-<div class="paper heart"></div>
+<div class="paper heart card" onclick="flipCard(this)">
+  <div class="card-inner">
+    <div class="card-front">
+      <!-- Front of the heart -->
+    </div>
+    <div class="card-back">
+      <div class="behind-heart">I love you Darling💗</div>
+    </div>
+  </div>
+</div>
 
 <div class="paper image">
-  <p> Very happy to have you</p>
-  <p> Her/Him Name 😍 </p>
-  <img src="images/3.png" />
+  <p> My Favorite Chapter: </p> 
+  <p> You 📖❤️ </p>
+  <img src="images/3.jpeg" />
 </div>
 
 <div class="image2 paper image ">
   <p></p>
-  <img height="400px" width="400px" src="images/2.png" />
+  <img height="400px" width="400px" src="images/2.jpeg" />
 </div>
 
 <div class="paper image">
-  <p>How can </p>
-  <p> someone be so cute ❤️ </p>
-  <img src="images/1.png" />
+  <p>How can someone be  </p>
+  <p> this adorable? 💖 </p>
+  <img src="images/1.jpeg" />
 </div>
 
 <div class="paper red">
-  <p class="p1"> and My Favorite</p>
-  <p class="p2"> Person </p>
+  <p class="p1"> My heart chose you </p>
+  <p class="p2"> and it's never been happier 💕</p>
 </div>
 
 <div class="paper">
-  <p class="p1">You are Cute </p>
-  <p class="p1"> and Amazing <span style="color: red !important;">❤️</span></p>
+  <p class="p1">Too cute to be real </p>
+  <p class="p1"> even lovelier on the inside  <span style="color: red !important;">❤️</span></p>
 </div>
 
 <div class="paper">
@@ -61,6 +70,9 @@ audio.play().catch(error => {
   console.warn("Autoplay was blocked. User interaction is required to play the audio.", error);
 });
 
+function flipCard(card) {
+  card.classList.toggle('flipped');
+}
 </script>
 <script src="./mobile.js"></script>
 </body>

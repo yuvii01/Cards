@@ -130,7 +130,13 @@ document.querySelectorAll('.paper').forEach(paper => {
     }
   });
 
+
+  function flipCard(card) {
+    card.classList.toggle('flipped');
+  }
+
   document.addEventListener('touchend', () => {
     isDragging = false;
   });
 });
+
