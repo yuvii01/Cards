@@ -117,10 +117,10 @@ p {
   backface-visibility: hidden;
 }
 
-.card-front {
+/* .card-front {
   background: red; /* Front side styling */
 }
-
+ */
 .card-back {
   background: pink; /* Back side styling */
   transform: rotateY(180deg);
